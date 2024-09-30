@@ -1,0 +1,2 @@
+# cjcProjectApp
+My mini project
