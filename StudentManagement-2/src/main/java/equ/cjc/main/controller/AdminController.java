@@ -45,6 +45,17 @@ import equ.cjc.main.service.StudentService;
 			System.out.println(student);
 			return "adminscreen";
 		}
+		@RequestMapping("/remove")
+		public String onRemove(@RequestParam int studentId, Model m)
+		{
+	        //delete the student
+			sr.deleteStundet(studentId);
+			// featch the remaining student
+			 List<Student> students = sr.getAllStudents();
+			 // send the remaining list to jsp
+		     m.addAttribute("data", students);
+			return "adminscreen";
+		}
      
 	
 	}

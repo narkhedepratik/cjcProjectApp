@@ -27,5 +27,12 @@ public class StudentServiceImpl implements StudentService{
 		return sr.findAll();
 	}
 
+	@Override
+	public void deleteStundet(int studentId) {
+
+		 sr.deleteById(studentId);
+		
+	}
+
 	
 }

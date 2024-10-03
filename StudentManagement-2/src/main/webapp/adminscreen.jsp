@@ -19,7 +19,15 @@
 	       
 	   }
 	</style>
-
+  <script type="text/javascript">
+  
+  function remove()
+  {
+	 document.fn.action="/remove";
+	 document.action.submit();
+  }
+  
+  </script>
 </head>
 <body>
      <div class="card">
@@ -142,7 +150,7 @@
 </section>
 <section class="table-container" id="view">
 <h1 class="text-white text-center"> Students Info....!</h1>
-
+     <form name="fn">
       <table class="table table-hover">
            <thead>
               <tr>
@@ -155,7 +163,8 @@
                  <th>Batch No.</th>
                  <th>Batch Mode</th>
                  <th>Fees Paid</th>  
-                 <td>Actions</td>    
+                 <th>Select</th>
+                 <th>Actions</th>    
               </tr>
            </thead>
            <tbody>
@@ -170,12 +179,26 @@
                     <td>${s.batchNumber }</td>
                     <td>${s.batchMode }</td>
                     <td>${s.feesPaid }</td>
+                    <td>
+                      <input type="radio" name="studentId" value="${s.studentId }"> 
+                    </td>
+                    
+                    <td>
+                       <div>
+                         <button class="btn btn-outline-primary">Fees</button>
+                         <button class="btn btn-outline-warning">Batch</button>
+                         <button class="btn btn-outline-danger" onClick="remove()" >Remove</button>
+                         
+                       </div>
+                    
+                    </td>
                     
                 </tr>
              </c:forEach>
            
            </tbody>
       </table>
+      </form>
 
 </section>
 
